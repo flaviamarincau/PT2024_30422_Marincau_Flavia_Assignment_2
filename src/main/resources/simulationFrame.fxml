@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="682.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SimulationFrameController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="simulationTextArea" editable="false" layoutX="188.0" layoutY="42.0" prefHeight="343.0" prefWidth="298.0" />
+         </children></AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="74.0" prefWidth="682.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="resultsLabel" layoutX="14.0" layoutY="5.0" prefHeight="34.0" prefWidth="664.0" textAlignment="CENTER" textFill="#20cc05">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="resetButton" layoutX="473.0" layoutY="-9.0" mnemonicParsing="false" onAction="#resetButtonOnAction" prefHeight="27.0" prefWidth="81.0" text="Reset input" />
+         </children></AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <AnchorPane prefHeight="410.0" prefWidth="354.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="6.0" layoutY="44.0" prefHeight="19.0" prefWidth="157.0" text="Insert input data below:">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="300.0" prefHeight="18.0" prefWidth="146.0" text="Service time (min-max):" />
+            <Label layoutX="11.0" layoutY="256.0" prefHeight="18.0" prefWidth="141.0" text="Arrival time (min-max):" />
+            <Label layoutX="13.0" layoutY="209.0" prefHeight="18.0" prefWidth="136.0" text="Simulation interval:" />
+            <Label layoutX="11.0" layoutY="160.0" prefHeight="18.0" prefWidth="57.0" text="Queues:" />
+            <Label layoutX="10.0" layoutY="126.0" prefHeight="18.0" prefWidth="50.0" text="Clients:" />
+            <TextField fx:id="clientTextField" layoutX="69.0" layoutY="122.0" prefHeight="26.0" prefWidth="62.0" />
+            <TextField fx:id="queueTextField" layoutX="69.0" layoutY="156.0" prefHeight="26.0" prefWidth="62.0" />
+            <TextField fx:id="simulationTextField" layoutX="143.0" layoutY="205.0" prefHeight="26.0" prefWidth="62.0" />
+            <TextField fx:id="minArrivalTimeTextField" layoutX="153.0" layoutY="252.0" prefHeight="26.0" prefWidth="43.0" />
+            <Label layoutX="212.0" layoutY="256.0" prefHeight="18.0" prefWidth="19.0" text="to" />
+            <TextField fx:id="maxArrivalTimeTextField" layoutX="241.0" layoutY="252.0" prefHeight="26.0" prefWidth="43.0" />
+            <TextField fx:id="minServiceTimeTextField" layoutX="156.0" layoutY="296.0" prefHeight="26.0" prefWidth="43.0" />
+            <Label layoutX="215.0" layoutY="300.0" prefHeight="18.0" prefWidth="19.0" text="to" />
+            <TextField fx:id="maxServiceTimeTextField" layoutX="244.0" layoutY="296.0" prefHeight="26.0" prefWidth="43.0" />
+            <Button fx:id="validateInputButton" layoutX="24.0" layoutY="347.0" mnemonicParsing="false" onAction="#validateInputButtonOnAction" prefHeight="33.0" prefWidth="115.0" text="Validate data" />
+            <Label fx:id="errorLabel" layoutX="7.0" layoutY="82.0" prefHeight="22.0" prefWidth="346.0" textAlignment="CENTER" textFill="#e41111">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="startSimulationButton" layoutX="176.0" layoutY="346.0" mnemonicParsing="false" onAction="#startSimulationButtonOnAction" prefHeight="34.0" prefWidth="144.0" text="START SIMULATION " />
+            <ComboBox fx:id="chooseStrategyComboBox" layoutX="164.0" layoutY="141.0" prefHeight="29.0" prefWidth="174.0" promptText="Choose strategy..." visibleRowCount="2" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
